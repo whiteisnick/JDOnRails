@@ -16,4 +16,77 @@
  *= require_self
  */
  @import "bootstrap-sprockets";
- @import "bootstrap"
+ @import "bootstrap";
+
+/* home css */
+.home {
+	$primary-color: #93979C;
+	$secondary-color: #955f26;
+
+	background: $primary-color;
+
+	.navbar-inverse {
+	  border-radius: 0;
+	  margin-bottom: 0;
+	  background-color: #03070C;
+	  .navbar-right {
+	    li {
+	      padding-right: 20px;
+	    }
+	  }
+	}
+
+
+	.jumbotron {
+	  background: $secondary-color;
+	  padding-top: 1%;
+	  padding-bottom: 1%;
+	}
+
+	.content {
+
+	  .info {
+
+	  }
+	  .media {
+
+	  }
+	  .gigs {
+
+	  }
+	}
+
+	.panel {
+
+	  .panel-heading {
+	    background: #888888;
+	  }
+	  .panel-body {
+	    background: #cccccc;
+	  }
+	  .list-group {
+	    background: #cccccc;
+	  }
+	  .list-group-item {
+	    background: #cccccc;
+	  }
+	  .table {
+	    background: #cccccc;
+	    a {
+	      color: black;
+	      text-decoration: underline;
+	    }
+	  }
+	}
+
+	.bottom-space {
+	  height: 20px;
+	}
+
+	.footer {
+	  text-align: center;
+	  background: #03070C;
+	  color: #555555;
+	  border-top: 1px solid #555555;
+	}
+}
