@@ -94,7 +94,7 @@
 /* jdandscott css */
 .jdandscott {
 	background-color: #999;
-	
+
 	.headroom {
 		margin: 2%;
 	}
@@ -123,6 +123,50 @@
 
 	.content {
 		margin-top: 4%;
+	}
+}
+
+/* debris css */
+.debris {
+	$primary-color: #333;
+	$secondary-color: white;
+
+	background-color: $primary-color;
+	border: 3px solid $secondary-color;
+
+	.header {
+		border-top: 3px solid $secondary-color;
+		border-bottom: 3px solid $secondary-color;
+		text-align: center;
+		color: $secondary-color;
+		h1 {
+			margin: 1%;
+		}
+	}
+	.pic {
+		border: 3px solid $secondary-color;
+		padding: 0;
+		box-shadow: 0 0 2px $secondary-color;
+	}
+	.content {
+		margin-top: 2%;
+		margin-bottom: 2%;
+		.myPanels {
+			background-color: $secondary-color;
+			color: $primary-color;
+			box-shadow: 0 0 2px $secondary-color;
+		}
+		.photoAlbum {
+			margin-right: 5px;
+			margin-left: -5px;
+		}
+		.about {
+
+		}
+		.discography {
+			margin-left: 5px;
+			margin-right: -5px;
+		}
 	}
 
 }
