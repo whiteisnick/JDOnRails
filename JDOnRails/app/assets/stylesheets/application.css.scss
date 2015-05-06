@@ -90,3 +90,39 @@
 	  border-top: 1px solid #555555;
 	}
 }
+
+/* jdandscott css */
+.jdandscott {
+	background-color: #999;
+	
+	.headroom {
+		margin: 2%;
+	}
+	.img-circle {
+		width: 100%;
+	}
+	.names {
+		margin-top: 10%;
+		text-align: center;
+	}
+	.schedule {
+		margin-top: 10%;
+		.panel-heading {
+			text-align: center;
+		}
+		.table {
+			a {
+				color: black;
+				text-decoration: underline;
+			}
+			td:nth-child(2) {
+				text-align: right;
+			}
+		}
+	}
+
+	.content {
+		margin-top: 4%;
+	}
+
+}
