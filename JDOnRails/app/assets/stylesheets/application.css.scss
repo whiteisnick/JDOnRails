@@ -133,7 +133,13 @@
 
 	background-color: $primary-color;
 	border: 3px solid $secondary-color;
-
+	
+	.JD {
+		padding-top: 15px;
+		a {
+			color: #aaa;
+		}
+	}
 	.header {
 		border-top: 3px solid $secondary-color;
 		border-bottom: 3px solid $secondary-color;

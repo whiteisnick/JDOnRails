@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get '/archives' => 'pages#archives'
   get '/jdandscott' => 'pages#jdandscott'
   get '/debris' => 'pages#debris'
+  get '/sign_up' => 'emails#new'
+  post 'emails' => 'emails#create'
+  get '/confirmed' => 'emails#show'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
