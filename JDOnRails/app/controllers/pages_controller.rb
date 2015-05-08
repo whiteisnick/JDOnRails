@@ -5,20 +5,20 @@ class PagesController < ApplicationController
 		@band = Band.find(1)
 		@abouts = @band.abouts
 		@stories = @band.stories
-		@gigs = @band.gigs
+		@gigs = Gig.all
 	end
 	def archives; end
 	def jdandscott
 		@band = Band.find(2)
 		@abouts = @band.abouts
 		@stories = @band.stories
-		@gigs = @bands.gigs
+		@gigs = @band.gigs
 	end
 	def debris
 		@band = Band.find(3)
 		@abouts = @band.abouts
 		@stories = @band.stories
-		@gigs = @bands.gigs
+		@gigs = @band.gigs
 	end
 
 end
