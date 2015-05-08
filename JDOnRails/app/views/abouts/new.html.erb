@@ -1,0 +1,10 @@
+<%= form_for(@about) do |a| %>  
+  <div class="field"> 
+    <%= a.label :about %><br> 
+    <%= a.text_area :description %> 
+    <%= a.select :band_id, options_for_select([['JD White', 1], ['JD and Scott', 2], ['Debris', 3], ['Black Moon Tonic', 4], ['Desperados', 5]]) %>
+  </div> 
+  <div class="actions"> 
+    <%= a.submit "Create" %> 
+  </div> 
+<% end %>

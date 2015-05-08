@@ -1,0 +1,10 @@
+<%= form_for(@story) do |s| %>  
+  <div class="field"> 
+    <%= s.label :story %><br> 
+    <%= s.text_area :news %> 
+    <%= s.select :band_id, options_for_select([['JD White', 1], ['JD and Scott', 2], ['Debris', 3], ['Black Moon Tonic', 4], ['Desperados', 5]]) %>
+  </div> 
+  <div class="actions"> 
+    <%= s.submit "Create" %> 
+  </div> 
+<% end %>

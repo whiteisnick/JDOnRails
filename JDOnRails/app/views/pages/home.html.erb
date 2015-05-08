@@ -94,7 +94,7 @@
                     <td><%= @bands.find(g.band_id).band_name %></td>
                     <td><%= g.show %></td>
                     <td><%= g.show_date %></td>
-                    <td><%= link_to 'Edit', edit_about_path(g) %></td>
+                    <td><%= link_to 'Edit', edit_gig_path(g) %></td>
                     <td><%= link_to 'Delete', g, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                   </tr>
                 <% end %>
