@@ -3,8 +3,10 @@ class CreateGigs < ActiveRecord::Migration
     create_table :gigs do |t|
     	t.text :show
     	t.text :show_date
-    	t.references :band
+    	t.integer :band_id
       t.timestamps null: false
     end
+
+    add_index :gigs, :band_id
   end
 end

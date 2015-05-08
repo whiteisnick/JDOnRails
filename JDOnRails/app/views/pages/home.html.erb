@@ -47,11 +47,27 @@
       <div class="col-xs-12 info">
         <div class="panel panel-default">
           <div class="panel-body">
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;JD has several musical avenues these days. He is playing most frequently with Scott Davidow - some acoustic numbers with Scott adding electric lead and rhythm - and with Black Moon Tonic, a local band playing fun music, both originals and a wide range of covers. </p>
-
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;JD also occasionally plays with the band he's played with for a very long time, Debris. They started in school and share a love of early punk, rock, and pop, with some occasional twang. </p>
-
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;And JD also fills in with two combos on the one-off shows they tend toward - Black Oktagon (with the irrepressable Dr. Robinson) and the perennial favorites from Del Ray, the Desperados. </p>
+            <% if user_signed_in? %>
+              <table class="table">
+                <tr>
+                  <th>Paragraph</th>
+                  <th></th>
+                  <th></th> 
+                </tr>
+                <% @abouts.each do |a| %>
+                <tr>
+                  <td><%= a.description %></td>
+                  <td><%= link_to 'Edit', edit_about_path(a) %></td>
+                  <td><%= link_to 'Delete', a, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+                <% end %>
+              </table>
+              <%= link_to "New Paragraph", new_about_path %>
+            <% else %>
+              <% @abouts.each do |a| %>
+                <p><%= a.description %></p>
+              <% end %>
+            <% end %>
           </div>
         </div>
       </div>
