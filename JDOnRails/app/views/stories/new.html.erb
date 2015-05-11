@@ -1,10 +1,21 @@
-<%= form_for(@story) do |s| %>  
-  <div class="field"> 
-    <%= s.label :story %><br> 
-    <%= s.text_area :news %> 
-    <%= s.select :band_id, options_for_select([['JD White', 1], ['JD and Scott', 2], ['Debris', 3], ['Black Moon Tonic', 4], ['Desperados', 5]]) %>
-  </div> 
-  <div class="actions"> 
-    <%= s.submit "Create" %> 
-  </div> 
-<% end %>
+<div class="new">
+  <div class="container-fluid">
+    <h1 class="center">New News Entry</h1>
+    <%= form_for(@story, class: 'form-horizontal') do |s| %>  
+      <div class="form-group"> 
+        <%= s.label :story, class: 'col-xs-2 control-label' %>
+        <div class="col-xs-10"> 
+          <%= s.text_area :news, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-xs-offset-4 col-xs-2">
+          <%= s.select :band_id, options_for_select([['JD White', 1], ['JD and Scott', 2], ['Debris', 3]]) %>
+        </div>
+        <div>
+          <%= s.submit "Create", class: 'btn btn-default' %>
+        </div> 
+      </div> 
+    <% end %>
+  </div>
+</div>
