@@ -1,10 +1,11 @@
+<% @title = "New News Entry" %>
 <div class="new">
   <div class="container-fluid">
     <h1 class="center">New News Entry</h1>
-    <%= form_for(@story, class: 'form-horizontal') do |s| %>  
-      <div class="form-group"> 
+    <%= form_for(@story, class: 'form-horizontal') do |s| %>
+      <div class="form-group">
         <%= s.label :story, class: 'col-xs-2 control-label' %>
-        <div class="col-xs-10"> 
+        <div class="col-xs-10">
           <%= s.text_area :news, class: 'form-control' %>
         </div>
       </div>
@@ -14,8 +15,8 @@
         </div>
         <div>
           <%= s.submit "Create", class: 'btn btn-default' %>
-        </div> 
-      </div> 
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
