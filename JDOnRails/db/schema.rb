@@ -11,16 +11,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150507205358) do
+ActiveRecord::Schema.define(version: 20150507233822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "abouts", force: :cascade do |t|
+    t.text     "description"
+    t.integer  "band_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "abouts", ["band_id"], name: "index_abouts_on_band_id", using: :btree
+
+  create_table "bands", force: :cascade do |t|
+    t.text     "band_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "emails", force: :cascade do |t|
     t.text     "email_address"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
+
+  create_table "gigs", force: :cascade do |t|
+    t.text     "show"
+    t.text     "show_date"
+    t.integer  "band_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "gigs", ["band_id"], name: "index_gigs_on_band_id", using: :btree
+
+  create_table "stories", force: :cascade do |t|
+    t.text     "news"
+    t.integer  "band_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "stories", ["band_id"], name: "index_stories_on_band_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

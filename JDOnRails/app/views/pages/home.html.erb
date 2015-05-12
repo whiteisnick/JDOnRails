@@ -47,11 +47,27 @@
       <div class="col-xs-12 info">
         <div class="panel panel-default">
           <div class="panel-body">
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;JD has several musical avenues these days. He is playing most frequently with Scott Davidow - some acoustic numbers with Scott adding electric lead and rhythm - and with Black Moon Tonic, a local band playing fun music, both originals and a wide range of covers. </p>
-
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;JD also occasionally plays with the band he's played with for a very long time, Debris. They started in school and share a love of early punk, rock, and pop, with some occasional twang. </p>
-
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;And JD also fills in with two combos on the one-off shows they tend toward - Black Oktagon (with the irrepressable Dr. Robinson) and the perennial favorites from Del Ray, the Desperados. </p>
+            <% if user_signed_in? %>
+              <table class="table">
+                <tr>
+                  <th>Paragraph</th>
+                  <th></th>
+                  <th></th> 
+                </tr>
+                <% @abouts.each do |a| %>
+                <tr>
+                  <td><%= a.description %></td>
+                  <td><%= link_to 'Edit', edit_about_path(a) %></td>
+                  <td><%= link_to 'Delete', a, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+                <% end %>
+              </table>
+              <%= link_to "New Paragraph", new_about_path %>
+            <% else %>
+              <% @abouts.each do |a| %>
+                <p><%= a.description %></p>
+              <% end %>
+            <% end %>
           </div>
         </div>
       </div>
@@ -63,15 +79,40 @@
             <h3 class="panel-title">Upcoming Gigs</h3>
           </div>
           <div class="panel-body">
-            <%= link_to 'Sign up for the gig mailing list!', "/sign_up" %>
+            <% if user_signed_in? %>
+              <!-- download the email list? -->
+              <table class="table">
+                <tr>
+                  <th>Band</th>
+                  <th>Gig</th>
+                  <th>Gig Date</th>
+                  <th></th> 
+                  <th></th>
+                </tr>
+                <% @gigs.each do |g| %>
+                  <tr>
+                    <td><%= @bands.find(g.band_id).band_name %></td>
+                    <td><%= g.show %></td>
+                    <td><%= g.show_date %></td>
+                    <td><%= link_to 'Edit', edit_gig_path(g) %></td>
+                    <td><%= link_to 'Delete', g, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  </tr>
+                <% end %>
+              </table>
+              <%= link_to "New Gig", new_gig_path %>
+            <% else %>
+              <%= link_to 'Sign up for the gig mailing list!', "/sign_up" %>
+              <table class="table table-hover">
+                <% @gigs.each do |g| %>
+                  <tr>
+                    <td><strong><%= @bands.find(g.band_id).band_name %></strong></td>
+                    <td><%= g.show %></td>
+                    <td><%= g.show_date %></td>
+                  </tr>
+                <% end %>
+              </table>
+            <% end %>
           </div>
-          <table class="table table-hover">
-            <tr>
-              <td><strong>JD & Scott</strong></td>
-              <td><a href="http://www.treehouselounge.com/">The Tree House Lounge</a></td>
-              <td>April 25th</td>
-            </tr>
-          </table>
         </div>
       </div>
 
@@ -81,11 +122,31 @@
           <div class="panel-heading">
             <h3 class="panel-title">News</h3>
           </div>
-          <ul class="list-group">
-            <li class="list-group-item"><p>This week, watch us on Youtube!</p></li>
-            <li class="list-group-item"></li>
-            <li class="list-group-item"></li>
-          </ul>
+          <% if user_signed_in? %>
+            <div class="panel-body">
+              <table class="table">
+                <tr>
+                  <th>Entry</th>
+                  <th></th>
+                  <th></th> 
+                </tr>
+                <% @stories.each do |s| %>
+                <tr>
+                  <td><%= s.news %></td>
+                  <td><%= link_to 'Edit', edit_story_path(s) %></td>
+                  <td><%= link_to 'Delete', s, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+                <% end %>
+              </table>
+              <%= link_to "New Entry", new_story_path %>
+            </div>
+          <% else %>
+            <ul class="list-group">
+              <% @stories.each do |s| %>
+                <li class="list-group-item"><p><%= s.news %></p></li>
+              <% end %>
+            </ul>
+          <% end %>
         </div>
       </div>
       <!-- Media -->

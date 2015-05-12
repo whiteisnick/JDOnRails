@@ -18,6 +18,10 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+body {
+	background: #999;
+}
+
 /* home css */
 .home {
 	$primary-color: #93979C;
@@ -212,5 +216,49 @@
 	  .right {
 	    text-align: right;
 	  }
+	}
+}
+
+/* new css */
+.new {
+	background: #888;
+	.center {
+		text-align: center;
+	}
+	textarea {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+}
+
+/* edit css */
+.edit {
+	background: #888;
+	.center {
+		text-align: center;
+	}
+	textarea {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	
+}
+
+/* email css */
+.email {
+	.email-form {
+		margin-top: 30px;
+		background: #955f26;
+		border-radius: 10px;
+	}
+	.email-confirmation {
+		margin-top: 30px;
+		background: #955f26;
+		border-radius: 10px;
+		text-align: center;
+		a {
+			color: #335544;
+		}
 	}
 }
