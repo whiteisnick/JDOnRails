@@ -1,0 +1,5 @@
+<% headers = ['Last Name', 'First Name', 'Email Address', 'Street Address', 'City', 'State', 'Zip', 'Phone', 'url', 'Notes', 'Date Added'] %>
+<%= CSV.generate_line headers %>
+<% @emails.each do |email| %>
+  <%= CSV.generate_line([email.last_name, email.first_name, email.email_address, email.street_address, email.city, email.state, email.zip, email.phone, email.url, email.notes, email.created_at]) %>
+<% end %>

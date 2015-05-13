@@ -15,9 +15,9 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
+        <!--<ul class="nav navbar-nav">
           <li><a href="/archives">Archives</a></li>
-        </ul>
+        </ul>-->
         <ul class="nav navbar-nav navbar-right">
           <li><a href="/debris">Debris</a></li>
           <li><a href="/jdandscott">JD & Scott</a></li>
@@ -82,6 +82,10 @@
           <div class="panel-body">
             <% if user_signed_in? %>
               <!-- download the email list? -->
+              <p>
+                Download:
+                <%= link_to "CSV", emails_path(format: :csv) %> |
+              </p>
               <table class="table">
                 <tr>
                   <th>Band</th>

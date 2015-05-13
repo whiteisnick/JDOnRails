@@ -5,6 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'csv'
+
 Band.create(band_name: "JD")
 Band.create(band_name: "JD and Scott")
 Band.create(band_name: "Debris")
@@ -21,5 +23,7 @@ About.create(description: "And JD also fills in with two combos on the one-off s
 About.create(description: "Debris is cool, they formed at JMU a long time ago!", band_id: 3)
 About.create(description: "Guitar duo JD and Scott play music that ignites the soul with selections from the last five decades along with occasional original songs.", band_id: 2)
 
-Email.create(email_address: "whiteisnick@gmail.com")
-
+# Email.create(Last_Name: "White", First_Name: "Nick", email_address: "whiteisnick@gmail.com", street_address: "8611 Conover Pl", city: "Alexandria", state: "VA", zip: "22308", phone: "703-399-9463", url: "nickwhite.com", notes: "YEAH")
+CSV.foreach("db/csv/JDemails1.csv", { encoding: "UTF-8", headers: true, header_converters: :symbol, converters: :all}) do |row|
+  Email.create(row.to_hash)
+end

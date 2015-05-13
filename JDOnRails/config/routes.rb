@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   get '/' => 'pages#home'
-  get '/archives' => 'pages#archives'
+  # get '/archives' => 'pages#archives'
   get '/jdandscott' => 'pages#jdandscott'
   get '/debris' => 'pages#debris'
   get '/sign_up' => 'emails#new'
@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :gigs
   resources :stories
   resources :bands
+  resources :emails
   # Example resource route with options:
   #   resources :products do
   #     member do

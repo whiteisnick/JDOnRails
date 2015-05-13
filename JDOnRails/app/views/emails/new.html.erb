@@ -1,11 +1,47 @@
 <% @title = "Sign Up" %>
 <div class="email">
 	<div class="container">
-		<div class="col-xs-offset-4 col-xs-4 email-form">
+		<div class="col-xs-offset-2 col-xs-8 email-form">
 			<%= form_for(@email, class: 'form-inline') do |f| %>
-			  <div class="form-group">
+			  <div class="form-group col-xs-6">
+			    <%= f.label :First, class: 'control-label' %><br>
+			    <%= f.text_area :first_name, class: 'form-control' %>
+			  </div>
+				<div class="form-group col-xs-6">
+			    <%= f.label :Last, class: 'control-label' %><br>
+			    <%= f.text_area :last_name, class: 'form-control' %>
+			  </div>
+				<div class="form-group col-xs-6">
 			    <%= f.label :your_email, class: 'control-label' %><br>
 			    <%= f.email_field :email_address, class: 'form-control' %>
+			  </div>
+				<div class="form-group col-xs-6">
+			    <%= f.label :Address, class: 'control-label' %><br>
+			    <%= f.text_area :street_address, class: 'form-control' %>
+			  </div>
+				<div class="form-group col-xs-6">
+			    <%= f.label :City, class: 'control-label' %><br>
+			    <%= f.text_area :city, class: 'form-control' %>
+			  </div>
+				<div class="form-group col-xs-6">
+			    <%= f.label :State, class: 'control-label' %><br>
+			    <%= f.text_area :state, class: 'form-control' %>
+			  </div>
+				<div class="form-group col-xs-6">
+			    <%= f.label :Zip, class: 'control-label' %><br>
+			    <%= f.text_area :zip, class: 'form-control' %>
+			  </div>
+				<div class="form-group col-xs-6">
+			    <%= f.label :Phone, class: 'control-label' %><br>
+			    <%= f.text_area :phone, class: 'form-control' %>
+			  </div>
+				<div class="form-group">
+			    <%= f.label :url, class: 'control-label' %><br>
+			    <%= f.text_area :url, class: 'form-control' %>
+			  </div>
+				<div class="form-group">
+			    <%= f.label :Notes, class: 'control-label' %><br>
+			    <%= f.text_area :notes, class: 'form-control' %>
 			  </div>
 			  <div class="form-group">
 			    <%= f.submit "Submit", class: 'form-control' %>

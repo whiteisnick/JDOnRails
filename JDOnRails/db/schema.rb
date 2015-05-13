@@ -32,9 +32,18 @@ ActiveRecord::Schema.define(version: 20150507233822) do
   end
 
   create_table "emails", force: :cascade do |t|
+    t.text     "last_name"
+    t.text     "first_name"
     t.text     "email_address"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.text     "street_address"
+    t.text     "city"
+    t.text     "state"
+    t.text     "zip"
+    t.text     "phone"
+    t.text     "url"
+    t.text     "notes"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "gigs", force: :cascade do |t|
